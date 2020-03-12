@@ -16,6 +16,10 @@ cd /scratch/sl7424/class_AG/project/fastq
 
 new_arr=(./*.sam)
 
+#Convert SAM to BAM 
 samtools view ${new_arr[$SLURM_ARRAY_TASK_ID]} > ${new_arr[$SLURM_ARRAY_TASK_ID]::-3}bam
 
+#Sort and indext them for IGV
+samtools sort ${new_arr[$SLURM_ARRAY_TASK_ID]::-3}bam -o ${new_arr[$SLURM_ARRAY_TASK_ID]::-4}_sorted.bam
+samtools index ${new_arr[$SLURM_ARRAY_TASK_ID]::-4}_sorted.bam
 
