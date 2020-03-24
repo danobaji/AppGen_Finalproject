@@ -23,7 +23,6 @@ makeTagDirectory ./test_example SRR1521890_sorted.bam
 
 
 # then use this tagdirectory to find peaks
-
 findPeaks test_example/ -style histone L 0 -C 3 -size 1000 -minDist 1000 -tbp 3 -o ./homer_peaks.txt
 
 # convert to bed format
