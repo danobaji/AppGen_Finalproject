@@ -12,12 +12,13 @@
 
 module load samtools/intel/1.9
 
-cd /scratch/sl7424/class_AG/project/fastq/
+cd /scratch/sl7424/class_AG/project/fastq/bam
 
-new_arr=(./*.sam)
+new_arr=(./*.bam)
 
-samtools view -bS ${new_arr[$SLURM_ARRAY_TASK_ID]} > ${new_arr[$SLURM_ARRAY_TASK_ID]::-3}bam
-
+#Sort and indext them for IGV
+samtools sort ${new_arr[$SLURM_ARRAY_TASK_ID]} -o ${new_arr[$SLURM_ARRAY_TASK_ID]::-4}_sorted.bam
+samtools index ${new_arr[$SLURM_ARRAY_TASK_ID]::-4}_sorted.bam
 
 
 
