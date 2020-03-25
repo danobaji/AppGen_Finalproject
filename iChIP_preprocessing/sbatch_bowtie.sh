@@ -6,7 +6,7 @@
 #SBATCH --time=48:00:00
 #SBATCH --mem=5GB
 #SBATCH --job-name=sarray_demo
-#SBATCH --array=0-59
+#SBATCH --array=0-157
 #SBATCH --mail-type=END
 #SBATCH --mail-user=sl7424@nyu.edu
 
