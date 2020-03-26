@@ -1,3 +1,14 @@
+#!/bin/bash
+#
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=1
+#SBATCH --time=12:00:00
+#SBATCH --mem=12GB
+#SBATCH --job-name=Featurecounts
+#SBATCH --mail-type=END
+#SBATCH --mail-user=sl7424@nyu.edu
+
 module load subread/intel/1.5.1
 module load  bedtools/intel/2.27.1
 
